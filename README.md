@@ -1,8 +1,37 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Bitcoin Wallet Tracker
 
-Currently, two official plugins are available:
+Type a Bitcoin (BTC) wallet address and look all transaction! 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Demo
+
+You can use it at this address: https://bitcoin-wallet-tracker.netlify.app
+
+  
+## Technologies
+
+**Client:** Reactjs + Vite, TailwindCSS, 
+
+**Library:** axios, framer-motion, react-icons
+
+  
+## To run
+
+localhost:
+```bash
+  npm run dev
+```
+build:
+```bash
+  npm run build
+```
+  
+## Author
+
+- [@onaranyusuf](https://www.github.com/onaranyusuf)
+
+  
+## Show your support!
+
+Give a ⭐️ if this project helped you!
