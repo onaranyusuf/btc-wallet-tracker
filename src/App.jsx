@@ -244,7 +244,7 @@ function App() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://api.blockcypher.com/v1/btc/main/addrs/${address}?token=596e9f79630c46d2a2893b23347d5d74`
+        `https://api.blockcypher.com/v1/btc/main/addrs/${address}?token={"GET_YOUR_TOKEN"}`
       );
       setData(response.data);
       setError("");
