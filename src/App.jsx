@@ -208,11 +208,11 @@ function Result({ data, usdRate }) {
         <div className="mt-2">
           {sortedTransactions.length > 0 && (
             <div
-              class="flex items-center p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 "
+            className="flex items-center p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 "
               role="alert"
             >
               <svg
-                class="flex-shrink-0 inline w-4 h-4 me-3"
+                className="flex-shrink-0 inline w-4 h-4 me-3"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -221,7 +221,7 @@ function Result({ data, usdRate }) {
                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
               </svg>
               <div>
-                <span class="font-medium">Warning!</span> Only the last 20
+                <span className="font-medium">Warning!</span> Only the last 20
                 transactions are shown.
               </div>
             </div>
@@ -244,7 +244,7 @@ function App() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://api.blockcypher.com/v1/btc/main/addrs/${address}?token={"GET_YOUR_TOKEN"}`
+        `https://api.blockcypher.com/v1/btc/main/addrs/${address}?token=98b66843a37445e6bbcc13976beb04b7`
       );
       setData(response.data);
       setError("");
@@ -259,13 +259,14 @@ function App() {
     const fetchBitcoinPrice = async () => {
       try {
         const response = await fetch(
-          "https://api.coindesk.com/v1/bpi/currentprice.json"
+          "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD"
         );
         const data = await response.json();
-        const usdRate = data.bpi.USD.rate_float;
+        const usdRate = data.USD;
         setUsdRate(usdRate);
       } catch (error) {
         console.error("Error fetching the Bitcoin price:", error);
+        setError("Can not get BTC price - API error!");
       }
     };
 
